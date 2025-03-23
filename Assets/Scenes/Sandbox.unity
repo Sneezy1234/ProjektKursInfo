@@ -8238,6 +8238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InteractRange: 5
   playerScript: {fileID: 7519813273786326836}
+  RightIKTarget: {fileID: 0}
 --- !u!4 &166740598
 Transform:
   m_ObjectHideFlags: 0
@@ -108206,7 +108207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScript: {fileID: 7519813273786326836}
-  itemBlueprintScript: {fileID: 0}
+  itemBlueprintScript: {fileID: 166740597}
   interactingColor: {r: 0.088113785, g: 1, b: 0, a: 1}
 --- !u!43 &1856199653
 Mesh:
@@ -126346,6 +126347,10 @@ PrefabInstance:
     - target: {fileID: 8276303837880057756, guid: 9d6d7add38dafb24eadeb161722328cf, type: 3}
       propertyPath: viewHeightOffset
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8276303837880057756, guid: 9d6d7add38dafb24eadeb161722328cf, type: 3}
+      propertyPath: waypoints.Array.size
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8276303837880057756, guid: 9d6d7add38dafb24eadeb161722328cf, type: 3}
       propertyPath: 'waypoints.Array.data[0]'
