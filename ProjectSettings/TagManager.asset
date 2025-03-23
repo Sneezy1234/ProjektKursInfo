@@ -11,6 +11,8 @@ TagManager:
   - Hurt_3
   - Enemy
   - ground
+  - outside
+  - inside
   layers:
   - Default
   - TransparentFX
