@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-// Script not in use!!!!
+// Script not in use!!!! WAS SOLL DAS HEIS?EN WIE STELLST DU DIR DAS OHNE VOR DIGGA INTERACT GEHT NICHT 
 // Test
 
 public class Keybinds : MonoBehaviour
