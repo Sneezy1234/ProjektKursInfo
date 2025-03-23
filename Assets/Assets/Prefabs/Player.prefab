@@ -1983,8 +1983,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stepSounds:
-  - {fileID: 8300000, guid: 1e2c345b3f615456d915050c8e2302ff, type: 3}
-  - {fileID: 8300000, guid: 90abb9cc09b9e4198938dbf05faef802, type: 3}
+  - {fileID: 8300000, guid: 9d0aad49db117413599ddbedefaf7590, type: 3}
+  - {fileID: 8300000, guid: d3be1ed71833e47d38386a239d180256, type: 3}
+  - {fileID: 8300000, guid: 1ac2313fda76b4b0e9c9ab7fb12f7008, type: 3}
+  - {fileID: 8300000, guid: 190a743b9608344a0b2491648c4ced83, type: 3}
+  - {fileID: 8300000, guid: 252b68b63d7b9459abb495bf7a1a38a7, type: 3}
+  - {fileID: 8300000, guid: 9b741478619ea437f9c192fc9be28340, type: 3}
+  - {fileID: 8300000, guid: ff724a6ea6ab241ad8cc14e5c74625ea, type: 3}
+  - {fileID: 8300000, guid: 517e9c8e679f04aedb93e45d1eaef4c2, type: 3}
+  - {fileID: 8300000, guid: 274e733bfc3154a2e9e605c0d6111302, type: 3}
+  - {fileID: 8300000, guid: 3089fef76d0c74f9987529b61b76025c, type: 3}
 --- !u!82 &2006108176163504044
 AudioSource:
   m_ObjectHideFlags: 0

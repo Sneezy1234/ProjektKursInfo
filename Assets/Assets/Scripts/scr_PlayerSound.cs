@@ -17,6 +17,8 @@ public class scr_PlayerSound : MonoBehaviour
 
     public void PlayFootstep()
     {
+        // Add checker that check if the tag of the ground is "inside" or "outside" and play the corresponding sound
+        
         AudioClip stepClip = stepSounds[Random.Range(0, stepSounds.Length)];
         stepSource.clip = stepClip;
         stepSource.volume = Random.Range(0.4f, 0.45f);
