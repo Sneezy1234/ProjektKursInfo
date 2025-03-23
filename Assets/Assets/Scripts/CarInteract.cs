@@ -46,7 +46,7 @@ public class CarInteract : MonoBehaviour, IInteractable
             }
         }
 
-        else if (transform.name == "kofferraum")
+        else if (transform.name == "boot")
         {
 
             Debug.Log("interact!");
