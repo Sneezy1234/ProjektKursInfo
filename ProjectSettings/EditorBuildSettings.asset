@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/waldstrasse.unity
+    guid: 355ed23782e80c74caf6823e4b9d5734
+  - enabled: 1
     path: Assets/Scenes/House.unity
     guid: d6f2bb6abe9204762807cce30974fe5e
   m_configObjects: {}
