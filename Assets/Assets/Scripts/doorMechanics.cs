@@ -12,9 +12,9 @@ public class doorMechanics : MonoBehaviour, IInteractable
 
 
     [Header("Audio")]
-    public AudioSource doorOpen;
-    public AudioSource doorClose;
-    public AudioSource doorLocked;
+    public AudioClip doorOpen;
+    public AudioClip doorClose;
+    public AudioClip doorLocked;
 
     public scr_PlayerMovement playerScript;
     
@@ -44,19 +44,19 @@ public class doorMechanics : MonoBehaviour, IInteractable
 
                 tuerAnim.Play("tueranimation", 0, 0.0f);
                 tueroffen = true;
-                doorOpen.Play();
+                AudioSource.PlayClipAtPoint(doorOpen, transform.position);
             }
             else if (tueroffen && tuerAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !tuerAnim.IsInTransition(0))
             {
                 tuerAnim.Play("tuerSchliessenAnimation", 0, 0.0f);
                 tueroffen = false;
-                doorClose.Play();
+                AudioSource.PlayClipAtPoint(doorClose, transform.position);
             }
         }
         else
         {
             Debug.Log("doorisLocked");
-            doorLocked.Play();
+            AudioSource.PlayClipAtPoint(doorLocked, transform.position);
         }
 
     }

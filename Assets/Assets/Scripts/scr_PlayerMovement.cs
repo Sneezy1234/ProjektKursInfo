@@ -33,7 +33,7 @@ public class scr_PlayerMovement : MonoBehaviour
     [Header("Slope Handling")]
     [HideInInspector] private bool onSlope;
     public float maxSlopeAngle = 60f;
-    [HideInInspector] private RaycastHit slopeHit;
+    [HideInInspector] private static RaycastHit slopeHit;
     [HideInInspector] private bool exitingSlope;
 
     [Header("Stamina")]
@@ -103,14 +103,13 @@ public class scr_PlayerMovement : MonoBehaviour
         SpeedControl();
         StateHandler();
         rb.drag = groundDrag;
-        onSlope = OnSlope();
+        //onSlope = OnSlope();
 
         Physics.Raycast(cam.transform.position, cam.transform.forward, out hit);
         Debug.DrawRay(cam.transform.position, cam.transform.forward * 99f);
 
         // Regeneriere die Ausdauer, wenn nicht gesprintet wird
         staminaRatio = currentStamina / maxStamina;
-        staminaSlider.value = staminaRatio;
         if (rb.velocity.magnitude < 4) StartCoroutine(RegenerateStaminaAfterSeconds(3f));
 
 
@@ -182,14 +181,9 @@ public class scr_PlayerMovement : MonoBehaviour
             state = MovementState.unlimited;
             desiredMoveSpeed = 999f;
         }
-        else if (vaulting)
-        {
-            state = MovementState.vaulting;
-            desiredMoveSpeed = vaultSpeed;
-        }
         else if (grounded)
         {
-            if (grounded && Input.GetKey(Keybinds.sprintKey) && currentStamina > 0)
+            if (Input.GetKey(Keybinds.sprintKey) && currentStamina > 0)
             {
                 state = MovementState.sprinting;
                 desiredMoveSpeed = sprintSpeed;
@@ -200,7 +194,7 @@ public class scr_PlayerMovement : MonoBehaviour
                 state = MovementState.crouching;
                 desiredMoveSpeed = walkSpeed * 0.6f;
             }
-            else if (canChangeState)
+            else
             {
                 state = MovementState.walking;
                 desiredMoveSpeed = walkSpeed;
