@@ -13,6 +13,7 @@ TagManager:
   - ground
   - outside
   - inside
+  - concrete
   layers:
   - Default
   - TransparentFX

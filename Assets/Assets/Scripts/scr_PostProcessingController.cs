@@ -41,7 +41,6 @@ public class scr_PostProcessingController : MonoBehaviour
     [Header("Script Reference")]
     public scr_DamageAndHealthSystem DmgHealthSystem;
     public scr_PlayerMovement PlayerController;
-    public scr_EnemieAI EnemieController;
 
     public GameObject testObj;
 
@@ -80,7 +79,6 @@ public class scr_PostProcessingController : MonoBehaviour
         chromaticAberrationIntensity = minChromaticAberrationIntensity;
 
         // Update all contributing factors
-        UpdateEnemieAIPostProcessingEffects();
         UpdateDmgHealthSystemPostProcessingEffects();
         UpdatePlayerControllerPostProcessingEffects();
 
@@ -92,19 +90,7 @@ public class scr_PostProcessingController : MonoBehaviour
         chromaticAberration.intensity.value = Mathf.Clamp(chromaticAberrationIntensity, minChromaticAberrationIntensity, maxChromaticAberrationIntensity)* PostProcessingEffectsIntensety;
     }
 
-    private void UpdateEnemieAIPostProcessingEffects()
-    {
-        // scr_EnemieAI
-        float distanceToPlayer = Vector3.Distance(EnemieController.transform.position, EnemieController.player.position);
-        float maxDistance = EnemieController.wideViewRadius;
-        float t = Mathf.Clamp01(1 - (distanceToPlayer / maxDistance)) + PostProcessingEffectsDistance;
-
-        // Combine enemy contributions
-        grainIntensity += Mathf.Lerp(0.05f, 0.5f * PostProcessingEffectsIntensety, t);
-        vignetteIntensity += Mathf.Lerp(0.05f, 0.2f * PostProcessingEffectsIntensety, t);
-        motionBlurIntensity += Mathf.Lerp(0f, 100f * PostProcessingEffectsIntensety, t);
-        chromaticAberrationIntensity += Mathf.Lerp(0.1f, 0.3f * PostProcessingEffectsIntensety, t);
-    }
+    
 
     private void UpdateDmgHealthSystemPostProcessingEffects()
     {

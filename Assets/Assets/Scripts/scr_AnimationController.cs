@@ -6,7 +6,7 @@ public class scr_AnimationController : MonoBehaviour
 {
     public Animator animator;  // Der Animator des Spielers
     public scr_PlayerMovement playMovement;
-    public scr_DamageAndHealthSystem DmgHthSystem;
+
 
     private float speed;
     private float previusSpeed = 0; 
@@ -32,7 +32,7 @@ public class scr_AnimationController : MonoBehaviour
         float staminaInfluence = ((playMovement.maxStamina - playMovement.currentStamina) / 12) + 1.2f;
         animator.SetFloat("StaminaInfluence", Mathf.Clamp(staminaInfluence, 1f, 3.5f));
 
-        if(DmgHthSystem.playerIsDead) animator.SetBool("isDead", true);
+
 
 
         // Handle direction
