@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CarInteract : MonoBehaviour, IInteractable
 {
@@ -14,7 +15,7 @@ public class CarInteract : MonoBehaviour, IInteractable
     public AudioSource carDoorOpen;
     public AudioSource carDoorClose;
 
-
+    public Image fadePanel;
 
     private void Start()
     {
@@ -57,6 +58,9 @@ public class CarInteract : MonoBehaviour, IInteractable
                 doorAnim.Play("OpenCarTrunk", 0, 0.0f);
                 isTrunkDoorOpen = true;
                 carDoorOpen.PlayDelayed(0f);
+
+                // Fade
+                SwitchScene();
             }
 
             else if (isTrunkDoorOpen && doorAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !doorAnim.IsInTransition(0))
@@ -66,5 +70,39 @@ public class CarInteract : MonoBehaviour, IInteractable
                 carDoorClose.PlayDelayed(0.85f);
             }
         }
+    }
+
+    private void SwitchScene()
+    {
+        // Fade
+        StartCoroutine(FadeToBlack(1.8f));
+    }
+
+    private IEnumerator FadeToBlack(float duration)
+    {
+        Color startColor = fadePanel.color;
+        float time = 0f;
+        
+        // Ensure starting alpha is 0.
+        startColor.a = 0f;
+        fadePanel.color = startColor;
+        
+        // Lerp alpha to 1 over duration.
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+            Color newColor = fadePanel.color;
+            newColor.a = Mathf.Lerp(0f, 1f, time / duration);
+            fadePanel.color = newColor;
+            yield return null;
+        }
+        
+        // Guarantee final alpha is 1.
+        Color finalColor = fadePanel.color;
+        finalColor.a = 1f;
+        fadePanel.color = finalColor;
+
+        UnityEngine.SceneManagement.SceneManager.LoadScene("House");
+
     }
 }
