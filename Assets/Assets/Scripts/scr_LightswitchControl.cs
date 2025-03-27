@@ -14,8 +14,6 @@ public class scr_LightswitchControl : MonoBehaviour, IInteractable
 
     private void Start()
     {
-        turnOnSound = (AudioClip)AssetDatabase.LoadAssetAtPath("Assets/Assets/Sound/Environment/House/Lightswitch/Licht-an-Decke.mp3", typeof(AudioClip));
-        turnOffSound = (AudioClip)AssetDatabase.LoadAssetAtPath("Assets/Assets/Sound/Environment/House/Lightswitch/Licht-aus-Decke.mp3", typeof(AudioClip));
         
         lightSwitchMat = GetComponent<Renderer>().material;
         for (int lightIdx = 0; lightIdx < lights.Length; lightIdx++)
