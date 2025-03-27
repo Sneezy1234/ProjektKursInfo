@@ -1,7 +1,7 @@
 # Me without You
 ## Where Silence Speaks Loudest
 
-![5%](https://progress-bar.xyz/21?title=Done)
+![100%](https://progress-bar.xyz/100?title=Done)
 ![68,75%](https://progress-bar.xyz/72?title=Base+Features)
 
 **Game Engine:** [Unity](https://unity.com/de) [(Download)](https://unity.com/de/download)
