@@ -6,6 +6,8 @@
 
 **Game Engine:** [Unity](https://unity.com/de) [(Download)](https://unity.com/de/download)
 
+**Download Game here:** [Itch.io](https://sneezy123.itch.io/projektkursinfo)
+
 ---
 
 **Alle Infos hier:** [Wiki](https://github.com/Sneezy123/ProjektKursInfo/wiki/Home)
